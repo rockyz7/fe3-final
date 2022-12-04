@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import Card from '../Components/Card'
 import { ContextGlobal } from '../Components/utils/global.context';
 
@@ -7,14 +8,16 @@ import { ContextGlobal } from '../Components/utils/global.context';
 
 const Home = () => {
   const { data } = useContext(ContextGlobal)
-  
+
   console.log(data);
   return (
     <main className="" >
       <h1>Home</h1>
       <div className='card-grid'>
     {data.map(item => {
-      return <Card name={item.name} username={item.username} id={item.id}/>
+      return <Link to={`/dentista/${item.id}`}> 
+      <Card key={item.id} name={item.name} username={item.username} id={item.id}/>
+      </Link> 
     })}
   
 

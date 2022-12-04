@@ -6,7 +6,6 @@ import Contact from "./Routes/Contact"
 import Detail from "./Routes/Detail"
 import Favs from "./Routes/Favs";
 import Home from "./Routes/Home"
-import Card from "./Components/Card";
 import "./index.css";
 import { ContextProvider } from "./Components/utils/global.context";
 
@@ -17,18 +16,22 @@ function App() {
   return (
    
       <Router className="App">
+        <ContextProvider>
         <Navbar/>
-       <ContextProvider>
+       
        <Routes>
+          
           <Route path="/home" element={<Home/>}/>
-
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/favs" element={<Favs/>}/>
-          <Route path="dentista/:id" element={<Card/>}/>
+          <Route path="/dentista/:id" element={<Detail/>}/>
+       
+          
         </Routes>
-       </ContextProvider>
+       
        
         <Footer/>
+        </ContextProvider>
       </Router>
   
    
