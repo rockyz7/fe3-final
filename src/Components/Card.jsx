@@ -6,11 +6,22 @@ import { StorageContext } from "./utils/localStorage.context";
 const Card = ({ name, username, id }) => {
 const {state, dispatch} = useContext(StorageContext)
 
+const array = state.favs;
+
   const addFav = (event, id, name, username) => {
     event.preventDefault()
     // Aqui iria la logica para agregar la Card en el localStorage
-    dispatch({type: "ADD_FAV", payload: {id, name, username}})
-    alert("Se agregó a favoritos")
+      const found = array.find(obj => obj.id === id)
+      if (found === undefined){
+        dispatch({type: "ADD_FAV", payload: {id, name, username}})
+        alert("Added to favs!")
+      }
+      else {
+        alert("Dentist is already on favs!")
+      }
+      
+   
+   
   }
 
   return (
