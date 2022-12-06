@@ -1,15 +1,21 @@
-import React from "react";
-
+import React, { useContext, useReducer, useEffect, createContext } from "react";
+import { ContextGlobal } from "./utils/global.context";
+import { StorageContext } from "./utils/localStorage.context";
 
 
 const Card = ({ name, username, id }) => {
+const {state, dispatch} = useContext(StorageContext)
 
-  const addFav = () =>{
+  const addFav = (event, id, name, username) => {
+    event.preventDefault()
     // Aqui iria la logica para agregar la Card en el localStorage
+    dispatch({type: "ADD_FAV", payload: {id, name, username}})
+    alert("Se agregó a favoritos")
   }
 
   return (
-    <div className="card">
+    
+  <div className="card">
       
       <img src="./images/doctor.jpg" alt="" />
       <h3>{name}</h3>
@@ -21,8 +27,10 @@ const Card = ({ name, username, id }) => {
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+        <button onClick={(event) => addFav(event, id, name, username)} className="favButton">⭐</button>
+
     </div>
+    
   );
 };
 
