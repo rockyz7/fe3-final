@@ -15,9 +15,8 @@ const Home = () => {
       <h1>Home</h1>
       <div className='card-grid'>
     {state.data.map(item => {
-      return <Link to={`/dentista/${item.id}`}> 
-      <Card key={item.id} name={item.name} username={item.username} id={item.id}/>
-      </Link> 
+      return <Card key={item.id} name={item.name} username={item.username} id={item.id}/>
+     
     })}
 
         {/* Aqui deberias renderizar las cards */}

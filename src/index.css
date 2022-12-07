@@ -23,6 +23,11 @@ code {
   cursor: pointer;
 }
 
+.no-favs {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 h1 {
   text-align: center;
   padding: 2rem 0rem 4rem;
@@ -42,6 +47,21 @@ a {
 }
 a:hover {
   color: rgb(136, 136, 136);
+}
+
+input.input-error,
+select.input-error {
+  border-color: #fc8181;
+}
+
+button:disabled {
+  opacity: 0.35;
+}
+
+.form-sent {
+  font-size: 1.3rem;
+  color: rgb(10, 117, 10);
+  margin-top: 30px;
 }
 
 footer.dark {

@@ -4,6 +4,7 @@ import { createContext } from 'react'
 
 export const StorageContext = createContext()
 
+
 const getLocalStorage = () => {
     const localData = localStorage.getItem("dentist")
     return localData ? JSON.parse(localData) : []
@@ -26,15 +27,19 @@ const getLocalStorage = () => {
         favs: [...state.favs, dentist]
       }
     }
+    
+    return state
   }
-  
 
 const StorageProvider = ({children}) => {
 const [state, dispatch] = useReducer(reducer, initialState)
 
+
 useEffect(()=> {
     localStorage.setItem("dentist", JSON.stringify(state.favs))
   }, [state.favs])
+
+
 
   return (
     <StorageContext.Provider value={{state, dispatch}}>

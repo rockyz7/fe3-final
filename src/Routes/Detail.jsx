@@ -22,10 +22,8 @@ const Detail = () => {
     <div className={state.theme}>
     <h1>Detail Dentist {dentist.id}</h1>
     <table>
-     
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-      <tr>
+     <tbody>
+     <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
@@ -37,7 +35,11 @@ const Detail = () => {
         <td>{dentist.phone}</td>
         <td>{dentist.website}</td>
       </tr>
+      </tbody>
     </table>
+      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
+      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+  
     </div>
    
   )
