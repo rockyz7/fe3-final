@@ -13,7 +13,7 @@ const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
 
   const schema = yup.object({
-    name: yup.string().min(5, "The name must contain 5 letters or more"),
+    name: yup.string().min(5, "The name must contain 5 letters or more").required(),
     email: yup.string().email("Please enter a valid email").required()
   })
 
@@ -28,12 +28,13 @@ const Form = () => {
   onSubmit
  })
 
- console.log()
   return (
 
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name"></label>
+        <label htmlFor="name">
+          Name: 
+        </label>
         <input type="text" 
         name="name" 
         id="name" 
@@ -43,7 +44,9 @@ const Form = () => {
         onBlur={handleBlur}
         className={errors.name && touched.name ? "input-error" : ""} / > 
         {errors.name && touched.name && <p className="error">{errors.name}</p>}
-        <label htmlFor="email"></label>
+        <label htmlFor="email">
+          Email: 
+        </label>
         <input type="email" 
         name="email" 
         id="email" 

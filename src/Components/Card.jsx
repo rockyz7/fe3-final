@@ -26,11 +26,11 @@ const array = state.favs;
 
   return (
     
-  <div className="card">
+  <div className="card" >
       <img src="./images/doctor.jpg" alt="" />
       <h3><Link to={`/dentista/${id}`}>{name}</Link></h3>
       <p>{username}</p>
-      <p>{id}</p>
+      {/* <p>{id}</p> */}
       
         {/* En cada card deberan mostrar en name - username y el id */}
 

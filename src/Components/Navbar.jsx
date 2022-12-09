@@ -25,7 +25,7 @@ const Navbar = () => {
       <NavLink to="/home">Home</NavLink>
       <NavLink to="/contact">Contact</NavLink>
       <NavLink to="/favs">Favs</NavLink>
-      <button className='dark' style={{ borderRadius: "7px"}} onClick={handleThemeChange}> {state.theme === "dark" ? "🌞" : "🌙"}</button>
+      <button className={!state.theme} onClick={handleThemeChange}> {state.theme === "dark" ? "💡" : "🌙"}</button>
       </div>
       
     </nav>

@@ -27,7 +27,7 @@ const getLocalStorage = () => {
         favs: [...state.favs, dentist]
       }
     }
-    
+
     return state
   }
 
@@ -39,7 +39,7 @@ useEffect(()=> {
     localStorage.setItem("dentist", JSON.stringify(state.favs))
   }, [state.favs])
 
-
+  
 
   return (
     <StorageContext.Provider value={{state, dispatch}}>

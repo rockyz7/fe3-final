@@ -5,8 +5,8 @@ export const initialState = {
   theme: "light", 
   data: [], 
 }
-
-export const ContextGlobal = createContext();
+ 
+export const ContextGlobal = createContext("");
 
 const reducer = (state, action) => {
   switch(action.type){
@@ -40,17 +40,7 @@ export const ContextProvider = ({ children }) => {
     dispatch
   }
  
-  useEffect(() => {
-    axios
-    .get('https://jsonplaceholder.typicode.com/users')
-    .then(response => {
-        dispatch({type: 'FETCH_SUCCESS', payload: response.data})
-
-    })
-    .catch(error => {
-        dispatch({type: 'FETCH_ERROR'})
-    })
-   }, [])
+ 
 
   return (
     <ContextGlobal.Provider value={contextValue}>
