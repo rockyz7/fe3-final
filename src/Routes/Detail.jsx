@@ -14,7 +14,7 @@ const Detail = () => {
     axios(url)
     .then(response => setDentist(response.data))
     .catch(error => console.log(error))
-  }, [params])
+  }, [url])
 
   return (
 
