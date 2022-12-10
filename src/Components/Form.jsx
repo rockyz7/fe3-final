@@ -5,12 +5,10 @@ import * as yup from "yup"
 const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000))
   document.querySelector(".form-sent").innerHTML = `<p>Thank you, ${values.name}! We'll contact you via email as soon as possible.</p>`
-  actions.resetForm();
-  
+  actions.resetForm(); 
 }
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
 
   const schema = yup.object({
     name: yup.string().min(5, "The name must contain 5 letters or more").required(),

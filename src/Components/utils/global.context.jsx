@@ -41,8 +41,6 @@ export const ContextProvider = ({ children }) => {
     dispatch
   }
  
- 
-
   return (
     <ContextGlobal.Provider value={contextValue}>
       {children}

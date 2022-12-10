@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../Components/Card";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
 
@@ -23,11 +22,9 @@ const Favs = () => {
       <h1>Favorites</h1>
       <div className="card-grid">
         {localData.map(item => {
-          
          return <Card key={item.id} name={item.name} username={item.username} id={item.id} />
         })}
-        {/* este componente debe consumir los destacados del localStorage */}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
+
       </div>
     </div>
   );

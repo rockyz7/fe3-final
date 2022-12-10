@@ -201,7 +201,7 @@ tr:nth-child(even) {
 }
 
 .details {
-  padding-bottom: 100px;
+  padding: 0px 10px 100px;
 }
 
 form {

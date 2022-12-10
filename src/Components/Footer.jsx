@@ -1,4 +1,3 @@
-import { IconButton, Tooltip } from '@mui/material';
 import React, { useContext } from 'react'
 import { ContextGlobal } from '../Components/utils/global.context';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -7,7 +6,6 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 
-  
 const Footer = () => {
 
  const { state } = useContext(ContextGlobal)

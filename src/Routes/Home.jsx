@@ -4,8 +4,6 @@ import { ContextGlobal } from '../Components/utils/global.context';
 import axios from "axios"
 
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Home = () => {
 
   const { state, dispatch } = useContext(ContextGlobal)
@@ -23,17 +21,16 @@ const Home = () => {
    }, [])
 
   return (
+
     <main>
       <h1>Home</h1>
       <div className='card-grid'>
     {state.data.map(item => {
       return <Card key={item.id} name={item.name} username={item.username} id={item.id}/>
-     
     })}
-
-        {/* Aqui deberias renderizar las cards */}
       </div>
     </main>
+
   )
 }
 
