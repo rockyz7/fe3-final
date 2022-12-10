@@ -1,6 +1,5 @@
 import axios from 'axios'
-import React, { useContext } from 'react'
-import { useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { ContextGlobal } from '../Components/utils/global.context'
 
@@ -19,8 +18,8 @@ const Detail = () => {
   }, [params])
 
   return (
-    <div className={state.theme}>
-    <h1>Detail Dentist {dentist.id}</h1>
+    <div className='details'>
+    <h1>Dentist #{dentist.id} details</h1>
     <table>
      <tbody>
      <tr>

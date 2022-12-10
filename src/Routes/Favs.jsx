@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../Components/Card";
-import { ContextGlobal } from '../Components/utils/global.context';
-import StorageProvider, { StorageContext } from "../Components/utils/localStorage.context";
+
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
-  const { state } = useContext(ContextGlobal)
+
   const localData = JSON.parse(localStorage.getItem("dentist"))
 
  
@@ -20,9 +19,8 @@ const Favs = () => {
   } 
 
   return (
-    <div className={state.theme}>
-    
-      <h1>Dentists Favs</h1>
+    <div>
+      <h1>Favorites</h1>
       <div className="card-grid">
         {localData.map(item => {
           
@@ -31,8 +29,6 @@ const Favs = () => {
         {/* este componente debe consumir los destacados del localStorage */}
         {/* Deberan renderizar una Card por cada uno de ellos */}
       </div>
-
-  
     </div>
   );
 };

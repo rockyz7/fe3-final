@@ -4,10 +4,9 @@ import {  render, screen } from '@testing-library/react'
 import { ContextProvider } from "../Components/utils/global.context"
 import Contact from "../Routes/Contact"
 import userEvent from "@testing-library/user-event"
-
  
 describe("Contact form", () => {
-    const onSubmit = jest.fn()
+
     beforeEach(() => {
         render (
             <ContextProvider>
@@ -17,29 +16,20 @@ describe("Contact form", () => {
     })
 
     test("Render form", () => {
-        const nameForm = screen.getByRole('textbox', {
-          name: /name:/i
-        })
-        const emailForm = screen.getByRole('textbox', {
-          name: /email:/i
-        })
+        const nameForm = screen.getByPlaceholderText(/your name/i)
+        const emailForm = screen.getByPlaceholderText(/email/i)
         expect(nameForm).toBeInTheDocument()
         expect(emailForm).toBeInTheDocument()
     
-        const input = screen.getByRole('textbox', {
-          name: /email:/i
-        })
+        const input = screen.getByPlaceholderText(/email/i)
+        
         expect(input).toHaveAttribute('type', 'email')
     })
 
     test("Wrong email", async () => {
         const mockData = { name: "Rocky", email: "rockygmail.com"}
-        const inputName = screen.getByRole('textbox', {
-            name: /name:/i
-          })
-        const inputEmail = screen.getByRole('textbox', {
-            name: /email:/i
-          })
+        const inputName = screen.getByPlaceholderText(/your name/i)
+        const inputEmail = screen.getByPlaceholderText(/email/i)
 
         const button = screen.getByRole("button", {
             name: /submit/i

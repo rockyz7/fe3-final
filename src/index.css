@@ -15,33 +15,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.favButton {
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-  border-radius: 15px;
+
+.dark {
+  background-color: #252525d0;
+  color: white;
 }
 
-.favButton:hover {
-  background-color: rgb(18, 18, 154);
-}
-
-.no-favs {
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-h1 {
-  text-align: center;
-  padding: 2rem 0rem 4rem;
+.light {
+  background-color: #e5e8ea;
 }
 
 nav {
   display: flex;
-  justify-content: flex-start;
-  padding: 1rem 10rem;
+  justify-content: space-around;
+  padding: 30px 50px;
+  font-size: 1.1rem;
+  box-shadow: -2px 4px 17px -4px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: -2px 4px 17px -4px rgba(0, 0, 0, 1);
+  -moz-box-shadow: -2px 4px 17px -4px rgba(0, 0, 0, 1);
+}
+
+nav.dark {
+  background-color: #000000d0;
+  color: white;
+}
+
+nav.light {
+  background-color: #d2d8dc8b;
+  border-bottom: 1px solid rgba(158, 157, 157, 0.26);
+}
+
+.logo {
+  font-size: 1.6rem;
+}
+
+.logo span {
+  color: red;
 }
 
 a {
@@ -52,6 +61,182 @@ a {
 }
 a:hover {
   color: rgb(136, 136, 136);
+}
+
+nav button {
+  margin-left: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+nav.light button {
+  background-color: rgb(0, 0, 0);
+}
+.active {
+  font-weight: bold;
+}
+.btn-top {
+  width: 100%;
+  text-align: center;
+  background-color: red;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  padding: 7px 0px;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  padding: 2rem 0rem 4rem;
+}
+
+h2 {
+  padding-top: 40px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 300px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 4px 6px 17px -4px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 4px 6px 17px -4px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 4px 6px 17px -4px rgba(0, 0, 0, 0.7);
+}
+
+.card p {
+  position: relative;
+  top: -12px;
+}
+
+.card .dark {
+  background-color: #000;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-grid {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  width: 60vw;
+  height: auto;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+.card img {
+  width: 100px;
+}
+
+.favButton {
+  background-color: rgba(136, 136, 136, 0.116);
+  padding: 10px;
+  border: none;
+  width: 90%;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.favButton:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.no-favs {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 60px 0;
+}
+
+.no-favs button {
+  margin-top: 25px;
+  width: 80px;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(62, 61, 61);
+  color: white;
+  padding: 7px 0;
+}
+
+.no-favs button:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #949191;
+}
+
+.details {
+  padding-bottom: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 400px;
+  height: 250px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+form input {
+  height: 40px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+form button {
+  height: 30px;
+  width: 30%;
+  align-self: center;
+  border-radius: 25px;
+  border: none;
+  background-color: rgb(53, 52, 52);
+  color: white;
+  margin-top: 25px;
+}
+
+form button:hover {
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
 }
 
 input.input-error,
@@ -65,8 +250,9 @@ button:disabled {
 
 .form-sent {
   font-size: 1.3rem;
-  color: rgb(10, 117, 10);
-  padding-top: 30px;
+  padding: 30px 0;
+
+  text-align: center;
 }
 
 footer.dark {
@@ -92,109 +278,34 @@ footer > div {
   padding: 50px 0px 10px;
 }
 
-footer > div > img {
+.footer > div > img {
   width: 200px;
   margin: 0;
 }
+
+.footer div {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
 footer > p {
   margin: 0;
-  /* padding-top: 0.7rem; */
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+.social-media img {
+  width: 25px;
 }
 
-.card {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  height: 300px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+footer.light {
+  background-color: #d2d8dc8b;
+  border-top: 2px solid rgba(158, 157, 157, 0.26);
 }
 
-.card .dark {
-  background-color: #000;
-}
-
-.card:hover {
-  border: 0.5px solid rgb(206, 217, 142);
-}
-
-.card-grid {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 60vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  padding-bottom: 2rem;
-}
-.card img {
-  width: 100px;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  display: table;
-  border: 1px solid #ccc;
-}
-
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #949191;
-}
-
-nav.dark {
-  background-color: #000000d0;
-  color: white;
-}
-.dark {
-  background-color: #252525d0;
-  color: white;
-}
 .dark a {
-  color: white;
-}
-
-nav button {
-  margin-left: 5px;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  border: none;
-}
-
-nav.light button {
-  background-color: rgb(0, 0, 0);
-}
-.active {
-  font-weight: bold;
-}
-.btn-top {
-  width: 100%;
-  text-align: center;
-  background-color: red;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  padding: 7px 0px;
-  cursor: pointer;
+  color: rgb(255, 255, 255);
 }

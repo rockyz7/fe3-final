@@ -17,8 +17,6 @@ const Form = () => {
     email: yup.string().email("Please enter a valid email").required()
   })
 
- 
-
  const {values, errors, touched, handleSubmit, handleChange, handleBlur, isSubmitting} = useFormik({
   initialValues: {
     name: "",
@@ -32,9 +30,7 @@ const Form = () => {
 
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Name: 
-        </label>
+        <label htmlFor="name"></label>
         <input type="text" 
         name="name" 
         id="name" 
@@ -44,9 +40,7 @@ const Form = () => {
         onBlur={handleBlur}
         className={errors.name && touched.name ? "input-error" : ""} / > 
         {errors.name && touched.name && <p className="error">{errors.name}</p>}
-        <label htmlFor="email">
-          Email: 
-        </label>
+        <label htmlFor="email"></label>
         <input type="email" 
         name="email" 
         id="email" 

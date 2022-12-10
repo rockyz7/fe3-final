@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react'
-import { Link } from 'react-router-dom';
 import Card from '../Components/Card'
 import { ContextGlobal } from '../Components/utils/global.context';
 import axios from "axios"
@@ -24,7 +23,7 @@ const Home = () => {
    }, [])
 
   return (
-    <main className={state.theme} >
+    <main>
       <h1>Home</h1>
       <div className='card-grid'>
     {state.data.map(item => {

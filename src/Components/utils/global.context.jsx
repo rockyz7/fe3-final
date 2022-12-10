@@ -1,5 +1,4 @@
-import { createContext, useReducer, useEffect, useMemo } from "react";
-import axios from "axios"
+import { createContext, useReducer } from "react";
 
 export const initialState = {
   theme: "light", 
@@ -12,11 +11,13 @@ const reducer = (state, action) => {
   switch(action.type){
     case 'FETCH_SUCCESS':
     return {
+      ...state,
         data: action.payload,  
     }
 
     case 'FETCH_ERROR':
     return {
+      ...state,
         data: [],
     }
 

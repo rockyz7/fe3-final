@@ -1,9 +1,6 @@
-import React, { useReducer } from 'react'
-import { useEffect } from 'react'
-import { createContext } from 'react'
+import React, { useReducer, useEffect, createContext } from 'react'
 
 export const StorageContext = createContext()
-
 
 const getLocalStorage = () => {
     const localData = localStorage.getItem("dentist")
@@ -34,12 +31,9 @@ const getLocalStorage = () => {
 const StorageProvider = ({children}) => {
 const [state, dispatch] = useReducer(reducer, initialState)
 
-
 useEffect(()=> {
     localStorage.setItem("dentist", JSON.stringify(state.favs))
   }, [state.favs])
-
-  
 
   return (
     <StorageContext.Provider value={{state, dispatch}}>
